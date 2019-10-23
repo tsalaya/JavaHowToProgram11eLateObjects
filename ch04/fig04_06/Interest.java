@@ -12,10 +12,12 @@ public class Interest {
         System.out.print("Enter number of years: ");
         num_of_years = input.nextInt();
 
+        System.out.printf("%s%20s%n", "Year", "Amount on deposit");
+
         for (int year = 1; year <= num_of_years; year++) {
             amount = principal * Math.pow(1.0 + rate, year);
 
-            System.out.printf("%4d%, 20.2f%n", year, amount);
+            System.out.printf("%4d%,20.2f%n", year, amount);
         }
 
         input.close();
