@@ -3,6 +3,12 @@ public class PassArray {
         int[] arr = { 1, 3, 7, 8, 12, 17 };
         int total = getTotal(arr);
         System.out.printf("Total of the array is %d%n", total);
+
+        modifyArray(arr);
+        System.out.println("The array after modification is:");
+        for (int number : arr) {
+            System.out.printf("%4d%n", number);
+        }
     }
 
     static int getTotal(int[] array) {
@@ -11,5 +17,11 @@ public class PassArray {
             total += number;
 
         return total;
+    }
+
+    static void modifyArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] *= 2;
+        }
     }
 }
