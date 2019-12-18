@@ -9,9 +9,11 @@ public class CalculateStringPoint {
 
         int total = calculateStringPointRepetitive(str);
         int total1 = calculateStringPointRecursive(str);
+        int total2 = calculateStringPointRecursive2(str);
 
         System.out.printf("Total is %d (repetitive)%n", total);
         System.out.printf("Total is %d (recursive)%n", total1);
+        System.out.printf("Total is %d (recursive)%n", total2);
 
         input.close();
     }
@@ -22,6 +24,13 @@ public class CalculateStringPoint {
         else
             return calculateStringPointRecursive(s.substring(0, 1))
                     + calculateStringPointRecursive(s.substring(1, s.length()));
+    }
+
+    public static int calculateStringPointRecursive2(String s) {
+        if (s.length() == 1)
+            return (int) s.toCharArray()[0] - 96;
+        else
+            return (int) s.toCharArray()[0] - 96 + calculateStringPointRecursive(s.substring(1, s.length()));
     }
 
     public static int calculateStringPointRepetitive(String s) {
